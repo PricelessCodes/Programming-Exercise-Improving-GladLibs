@@ -1,0 +1,7 @@
+polar bear
+tiger
+pangolin
+armadillo
+fox
+horse
+lion
