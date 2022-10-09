@@ -73,7 +73,7 @@ public class CodonCount {
         String mostCommonCodon = getMostCommonCodon();
         System.out.println("the most common codon is: " + mostCommonCodon + " and its count is: " + DNACodons.get(mostCommonCodon));
         
-        int start = 1, end = 3;
+        int start = 7, end = 7;
         System.out.println("the codons and their number of occurrences for those codons whose number of occurrences are between (" + start + " and " + end + ") inclusive: ");
         printCodonCounts(start, end);
     }

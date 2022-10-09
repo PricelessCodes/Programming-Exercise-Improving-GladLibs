@@ -24,7 +24,7 @@ public class WordsInFiles {
         
         for (String word: fr.words())
         {
-            word = word.toLowerCase();
+            word = word.toLowerCase().trim();
             
             if (!words.containsKey(word))
             {
@@ -76,15 +76,19 @@ public class WordsInFiles {
     private ArrayList<String> wordsInNumFiles(int number)
     {
         ArrayList<String> wordsList = new ArrayList<String>();
+        int count = 0; 
         
         for (String word : words.keySet())
         {
-            int length = words.get(word).size();
+            ArrayList<String> currentList = words.get(word);
+            int length = currentList.size();
             if (length == number)
             {
                 wordsList.add(word);
+                count++;
             }
         }
+        System.out.println("countcountcount : " + count);
         return wordsList;
     }
     
@@ -121,7 +125,7 @@ public class WordsInFiles {
         int occurrance = maxNumber();
         System.out.println("\n");
         
-        int number = 2;
+        int number = 4;
         ArrayList<String> wordList = wordsInNumFiles(number);
         System.out.println("Words that occurred in (" + number + ") files");
         for (int i = 0; i < wordList.size(); i++)
@@ -129,5 +133,7 @@ public class WordsInFiles {
             printFilesIn(wordList.get(i));
         }
         System.out.println("\n");
+        System.out.println(wordList.size());
+        printFilesIn("tree");
     }
 }
